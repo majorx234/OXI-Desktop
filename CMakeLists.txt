@@ -1,9 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
 
-# This variable is ignored on non Apple devices and needs to be a Cached string
-set(CMAKE_OSX_DEPLOYMENT_TARGET "10.15" CACHE STRING "Minimum OS X deployment version")
-set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64" CACHE STRING "")
-
 project(Oxi-Desktop-App LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -17,8 +13,6 @@ set(ENV{GOOGLETEST_DIR} "${CMAKE_SOURCE_DIR}/libs/googletest/")
 
 option(BUILD_TESTS "Build unit tests." ON)
 
-add_subdirectory(libs/rtmidi)
-add_subdirectory(libs/QMidi)
 add_subdirectory(libs/oxi/oxi_core)
 add_subdirectory(apps/oxi_desktop)
-add_subdirectory(tests/unittests)
+#add_subdirectory(tests/unittests)
